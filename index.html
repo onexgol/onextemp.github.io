@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <title>Onexgol Template</title>
+    <style>
+        .code-container {
+            position: relative;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .copy-button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="code-container">
+        <pre><code class="cpp">
+#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+using ll = long long;
+using ld = long double;
+
+// https://clck.ru/3MddJV
+
+ll gcd(ll a, ll b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+ll lcm(ll a, ll b) {
+    return a / gcd(a, b) * b;
+}
+
+template &lt;typename Container&gt;
+void print(const Container& container) {
+    for (int i = 0; i &lt; container.size(); i++) {
+        if (i &gt; 0) cout &lt;&lt; ' ';
+        cout &lt;&lt; container[i];
+    }
+    cout &lt;&lt; "\n";
+}
+
+template &lt;typename Container&gt;
+auto summ(const Container& container) {
+    return accumulate(container.begin(), container.end(), 0);
+}
+
+#define int long long
+#define endl "\n"
+#define fi first
+#define se second
+#define all(x) (x).begin(), (x).end()
+#define pb push_back
+#define itn int
+
+using vi = vector&lt;int&gt;;
+using vl = vector&lt;ll&gt;;
+using vv = vector&lt;vector&lt;int&gt;&gt;;
+using vstr = vector&lt;string&gt;;
+using vch = vector&lt;char&gt;;
+using vb = vector&lt;bool&gt;;
+using pii = pair&lt;int, int&gt;;
+using umi = unordered_map&lt;int, int&gt;;
+using mi = map&lt;int, int&gt;;
+
+void func() {
+    // type code here.
+}
+
+int32_t main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    // freopen("input.txt", "r", stdin);
+    // int t; cin &gt;&gt; t;
+    int t = 1;
+    while (t--) func();
+    return 0;
+}
+</code></pre>
+        <button class="copy-button" onclick="copyCode()">Копировать</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        function copyCode() {
+            const codeElement = document.querySelector('.code-container pre code');
+            const codeText = codeElement.textContent;
+
+            navigator.clipboard.writeText(codeText)
+                .then(() => {
+                    alert('Код скопирован в буфер обмена!');
+                })
+                .catch(err => {
+                    console.error('Не удалось скопировать код: ', err);
+                    alert('Не удалось скопировать код. Пожалуйста, скопируйте вручную.');
+                });
+        }
+    </script>
+</body>
+</html>
